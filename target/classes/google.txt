@@ -1,0 +1,16 @@
+							<?php
+		$i = 0;
+	    	foreach ($coordinates as $coord) {
+				if(!empty($coord) && is_array($coord)) {
+					echo 'latLng = new google.maps.LatLng('.$coord['lat'].', '.$coord['lng'].');';
+					echo 'contentString = \'<div id="mcwrap"><span>'.$titles[$i].'</span><br/>'.esc_js($addresses[$i]).'</div>\';';
+					echo 'bounds.extend(latLng);';
+					echo 'codeAddress(latLng,contentString);';			
+				}
+    			$i++;
+    		}
+		?>
+
+							
+						});
+		
